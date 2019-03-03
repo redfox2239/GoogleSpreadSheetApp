@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleSpreadSheetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hd-ch-5eg">
+                                <rect key="frame" x="8" y="28" width="359" height="41"/>
+                                <string key="text">Google App ScriptのAPIのURLを入力すると
+データがパースされるアプリです</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GoogleAppScriptのAPIURLを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foM-SA-PZH">
+                                <rect key="frame" x="8" y="115" width="359" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go" textContentType="url"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7Qe-gv-aig"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q6-Me-Bvj">
+                                <rect key="frame" x="337" y="77" width="30" height="30"/>
+                                <state key="normal" title="例"/>
+                                <connections>
+                                    <action selector="tapExampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VZg-qG-YaM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0hd-ch-5eg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="0r0-ut-XrJ"/>
+                            <constraint firstItem="9Q6-Me-Bvj" firstAttribute="top" secondItem="0hd-ch-5eg" secondAttribute="bottom" constant="8" id="6Fe-3z-YZ9"/>
+                            <constraint firstItem="foM-SA-PZH" firstAttribute="top" secondItem="9Q6-Me-Bvj" secondAttribute="bottom" constant="8" id="Czk-5P-Jcj"/>
+                            <constraint firstItem="foM-SA-PZH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="FRO-Ls-YkM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foM-SA-PZH" secondAttribute="trailing" constant="8" id="bcg-Zj-6a0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0hd-ch-5eg" secondAttribute="trailing" constant="8" id="e1e-b5-2hC"/>
+                            <constraint firstItem="0hd-ch-5eg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="htl-fV-qxH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Q6-Me-Bvj" secondAttribute="trailing" constant="8" id="oLG-oU-dgh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="gasURLTextField" destination="foM-SA-PZH" id="L0t-Nx-ggF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="35"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7y6-K2-gO1">
+            <objects>
+                <viewController storyboardIdentifier="GASViewController" id="BDP-VX-NFF" customClass="GASViewController" customModule="GoogleSpreadSheetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hi3-lz-JSO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pnf-pb-Msm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="UeX-On-PrZ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UeX-On-PrZ" id="sx0-uj-we2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BDP-VX-NFF" id="AVm-bI-yrO"/>
+                                    <outlet property="delegate" destination="BDP-VX-NFF" id="BhW-Ah-NDK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pnf-pb-Msm" firstAttribute="top" secondItem="KIE-np-G0y" secondAttribute="top" id="K37-0k-qBo"/>
+                            <constraint firstItem="pnf-pb-Msm" firstAttribute="leading" secondItem="KIE-np-G0y" secondAttribute="leading" id="K6z-Ld-9ms"/>
+                            <constraint firstItem="KIE-np-G0y" firstAttribute="trailing" secondItem="pnf-pb-Msm" secondAttribute="trailing" id="bpZ-tf-PCz"/>
+                            <constraint firstItem="KIE-np-G0y" firstAttribute="bottom" secondItem="pnf-pb-Msm" secondAttribute="bottom" id="i6B-Ho-3hz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KIE-np-G0y"/>
+                    </view>
+                    <connections>
+                        <outlet property="listTableView" destination="pnf-pb-Msm" id="w2p-gH-brp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1f-2c-BOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="35"/>
+        </scene>
+    </scenes>
+</document>
