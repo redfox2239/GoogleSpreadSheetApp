@@ -34,6 +34,9 @@ class GASViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var initPos = CGPoint(x: 0, y: 0)
+        cell.subviews.forEach { (v) in
+            v.removeFromSuperview()
+        }
         listData[indexPath.row].forEach { (val) in
             let text = convertText(val)
             let button = UIButton(frame: CGRect(x: initPos.x, y: initPos.y, width: cell.frame.size.width, height: 44))
